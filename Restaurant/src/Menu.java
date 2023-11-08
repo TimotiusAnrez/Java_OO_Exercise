@@ -128,6 +128,12 @@ public class Menu {
     }
 
     public void showRegular(){
+
+        if(regularMenu.size() == 0){
+            System.out.println("Regular menu doesn't have data");
+            return;
+        }
+
         //? selama i yang dimulai dari 0 itu masih dibawah size dari regularMenu
         //? lakukan kode didalem setelah itu tambahkan i dengan 1
         System.out.println("==========================================================");
@@ -142,6 +148,11 @@ public class Menu {
 
     public void showSpecial(){
         
+        if(specialMenu.size() == 0){
+            System.out.println("Special menu doesn't have data");
+            return;
+        }
+
         System.out.println("==========================================================");
         System.out.printf("%-10s %-10s %-20s %-10s %-10s\n","No.","Kode", "Nama", "Harga", "Diskon");
         System.out.println("===========================================================");
@@ -152,35 +163,51 @@ public class Menu {
     }
 
     public void showAllMenu(){
+        
+
         showRegular();
         showSpecial();
     }
 
     //kalau ga ketemu harus ditanya lagi
     //kalau ketemu di delete dan loop dikelarin
+    //error first callback
     public void deleteRegularMenu(){
+
+        /**
+         * tampilin semua menu reguler
+         * minta input user kode menu yang mau di delete
+         * validasi
+         *      kalau index lebih dari sama dengan size menu nya
+         *          ulangi fungsi delete regular menu
+         *      kalau apa yang dinput dan kode index sekarang itu adalah sama
+         *          selesaikan loopnya
+         *      kalau engga semua
+         *          tambahin index dengan 1
+         *  remove element dari regularMenu index sekarang
+         */
+
         showRegular();
         int index = 0; //kalau index++ aktif dia akan tambah 1
         String inputDelete="";
-        Boolean flag = false;
-        //[0][1]][2][3]
+        int menuLength = regularMenu.size();
+        //[0][1][2][3]
         System.out.println("Input code: ");
         inputDelete = sc.next(); 
-        while(!(flag)){
-            if(index >= regularMenu.size()){
-                deleteRegularMenu();
+        while(true){
+            if(index >= regularMenu.size() ){
+                System.out.println("Code is wrong !");
+                deleteRegularMenu(); //apa pun yang mencegah error harus yang paling pertama
+            }else if(inputDelete.equals(regularMenu.get(index).getCode())){
+                System.out.println("Delete Success");
+                break;
+            }else{
+                index ++;
             }
             
-            if(inputDelete.equals(regularMenu.get(index).getCode())){
-                flag = true;
-                break;
-            }
-            index ++;
         }
         
-        regularMenu.remove(index);
-        
-        
+        regularMenu.remove(index);     
     }
 
     public void deleteSpecialMenu(){
