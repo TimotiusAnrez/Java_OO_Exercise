@@ -68,3 +68,21 @@ tidak ada, maka program akan menampilkan pesan “Code is Wrong”.
 ### Exit
 
 Exit program
+
+## Class Diagram
+![alt text](./static/Restaurant%20V%200.0.1.png)
+
+
+while(statement){
+    code execution
+}
+
+selama stament itu bener maka jalankan kode dibawah
+
+while(!(T)){
+    kode ga akan jalan 
+}
+
+while(!(F)){
+    kode akan jalan
+}
