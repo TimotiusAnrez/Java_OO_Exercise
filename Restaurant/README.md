@@ -1,18 +1,70 @@
-## Getting Started
+# Restaurant APP
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Family Restaurant merupakan restoran yang menyediakan berbagai macam hidangan yang 
+terdiri dari dua menu yaitu menu Reguler dan menu Special. Anda sebagai programmer diminta untuk 
+membuatkan program yang digunakan untuk mengatur daftar menu Family Restaurant dengan 
+menggunakan konsep OOP (menggunakan Inheritance) dan disimpan dengan menggunakan Vector / 
+ArrayList. 
 
-## Folder Structure
+## Functionality
+Pada saat program pertama kali dijalankan akan menampilkan 6 buah pilihan yaitu Add 
+Regular Menu, Add Special Menu, Show All Menu, Delete Regular Menu, Delete Special Menu dan Exit. 
+Validasikan user hanya dapat memasukkan pilihan antara 1-6 dan berupa angka. Jika input tidak sesuai 
+maka program akan meminta user untuk memasukkan pilihan lagi.
 
-The workspace contains two folders by default, where:
+### Add Regular Menu
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Ketika user memasukkan pilihan “1” maka program akan meminta user untuk memasukkan data 
+untuk menu reguler yaitu:
+- Kode Menu
+Validasikan panjang kode menu 4 karakter dan huruf depannya “R”.
+Kode Menu tidak boleh sama.
+- Nama Menu
+Validasikan panjang nama menu antara 5 sampai 20 karakter.
+Nama Menu boleh sama.
+- Harga
+Validasikan harga menu antara 10000 – 100000 dan harus berupa angka.
+Ketika user selesai memasukkan data untuk menu reguler maka program akan menampilkan pesan 
+“Add Success"
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### Add Special Menu
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Ketika user memasukkan pilihan “2” maka program akan meminta user untuk memasukkan data 
+untuk menu special yaitu:
+- Kode Menu
+Validasikan panjang kode menu 4 karakter dan huruf depannya “S”.
+Kode Menu tidak boleh sama.
+- Nama Menu
+Validasikan panjang nama menu antara 5 sampai 20 karakter.
+Nama Menu boleh sama.
+- Harga
+Validasikan harga menu antara 10.000 – 100.000 dan harus berupa angka.
+- Diskon
+Validasikan diskon hanya 10, 25 dan 50 persen.
+Ketika user selesai memasukkan data untuk menu reguler maka program akan menampilkan pesan 
+“Add Success"
 
-## Dependency Management
+### Show All Menu
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Ketika user memasukkan pilihan “3” maka program akan menampilkan semua data menu reguler 
+dan menu special
+
+### Delete Regular Menu
+
+Ketika user memasukkan pilihan “4” maka program akan meminta user untuk memasukkan kode 
+menu reguler yang ingin dihapus. Validasikan panjang kode menu 4 karakter dan huruf depannya 
+“R”. jika kode menu reguler yang dimasukkan ada, maka menu tersebut akan terhapus dan 
+program akan menampilkan pesan “Delete Success”. Jika kode menu reguler yang dimasukkan 
+tidak ada, maka program akan menampilkan pesan “Code is Wrong”.
+
+### Delete Special Menu
+
+Ketika user memasukkan pilihan “5” maka program akan meminta user untuk memasukkan kode 
+menu special yang ingin dihapus. Validasikan panjang kode menu 4 karakter dan huruf depannya 
+“S”. jika kode menu special yang dimasukkan ada, maka menu tersebut akan terhapus dan 
+program akan menampilkan pesan “Delete Success”. Jika kode menu special yang dimasukkan 
+tidak ada, maka program akan menampilkan pesan “Code is Wrong”.
+
+### Exit
+
+Exit program
